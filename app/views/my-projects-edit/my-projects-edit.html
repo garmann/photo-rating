@@ -1,0 +1,52 @@
+<navigation></navigation>
+
+<div class="my-projects-edit">
+
+
+
+
+<br>
+New Shooting:
+
+<div>
+  <label for="text-input-title">Title</label>
+  <div>
+    <input type="text" value="" id="text-input-title" placeholder="Title">
+  </div>
+</div>
+
+<div>
+  <label for="text-input-description">Description</label>
+  <div>
+    <input type="text" value="" id="text-input-description" placeholder="Description">
+  </div>
+</div>
+
+
+<hr>
+<div class="fileupload">
+
+  Upload on form submit or button click
+  <br><br> 
+  <form name="form">
+    Single Image with validations
+    <div class="button" ngf-select ng-model="file" name="userPhoto" ngf-pattern="'image/*'"
+      ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100"
+      ngf-resize="{width: 100, height: 100}">Select</div>
+
+    <br><br> 
+    Multiple files
+    <div class="button" ngf-select ng-model="files" ngf-multiple="true">Select</div>
+
+    <br><br>
+    Drop files: <div ngf-drop ng-model="files" class="drop-box">Drop</div>
+
+    <br><br>
+    <button type="submit" ng-click="submit()">submit</button>
+  </form>
+
+</div>
+
+<button class="btn btn-primary">Create new Shooting</button>
+
+</div>

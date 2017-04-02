@@ -1,0 +1,40 @@
+<navigation></navigation>
+<div class="my-shootings">
+<h2>My Shootings:</h2>
+<ul ng-repeat="listing in listings track by $index">
+  <li>{{listing.title}}
+
+      <!--
+      <span class="glyphicon glyphicon-edit"></span>
+      -->
+
+      <span class="glyphicon glyphicon-briefcase"
+        ng-click="toggleSelectMenu($index)"
+        title="Filenames for Lightroom Filter">
+      </span>
+
+      <span class="glyphicon glyphicon-trash"
+        ng-click="deleteShooting($index + 1)">
+      </span>
+
+      <div ng-show="toggleSelectMenuArray[$index]">
+        <p id="selectbox">Select a rating for Lightroom Text Fitlers:</p>
+
+        <select ng-options="i.option for i in ratings"
+                    ng-model="selectedItem"
+                    ng-change="selectedItemChanged($index + 1, selectedItem.value)">
+                    <option value="">Please select</option>
+        </select>
+
+        <div ng-show="selectedItem">
+          <p id="lightroomdesc">Paste this into your Lightroom Filter:</p>
+          <p id="lightroomtext">{{lightroomtext[$index + 1]}}</p>
+        </div>
+
+      </div>
+
+
+  </li>
+</ul>
+
+</div>

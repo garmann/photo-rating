@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="photoRating" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>photo-rating prototype</title>
+
+  <!--
+  <meta name="description" content="prototype of photo-rating webapp">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  -->
+
+  <link rel="stylesheet" type="text/css" href="assets/vendor/normalize.css">
+  <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-3.0.3/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="app.css">
+
+</head>
+<body>
+
+<div class="xcontainer">
+  <div ng-view></div>
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+
+  <script data-require="jquery@2.0.3" data-semver="2.0.3" src="assets/vendor/jquery-2.0.3.min.js"></script>
+  <script src="assets/vendor/jquery.elevatezoom.min.js"></script>
+
+  <script src="app.module.js"></script>
+  <script src="app.config.js"></script>
+
+  <script src="components/navigation/navigation.component.js"></script>
+
+  <script src="views/gallery-listing/gallery-listing.js"></script>
+  <script src="views/gallery-rating/gallery-rating.js"></script>
+  <script src="views/gallery-overview-rating/gallery-overview-rating.js"></script>
+  <script src="views/my-shootings/my-shootings.js"></script>
+
+  <script src="services/shooting-details.factory.js"></script>
+
+
+</div>
+</body>
+</html>

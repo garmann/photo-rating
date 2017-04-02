@@ -1,0 +1,52 @@
+<navigation></navigation>
+
+<div class="gallery-overview-rating">
+
+<div class="gallery-header">
+  <h2>{{shootingdetail.title}}</h2>
+  <p>{{shootingdetail.description}}</p>
+</div>
+
+<div class="gallery-overview">
+  <div class="gallery-overview-picture" ng-repeat="gallery in shootingdetail.photos track by $index">
+
+    <div class="gallery-overview-picture-filename">
+      Filename: {{gallery.name}}
+    </div>
+
+    <div class="gallery-overview-picture-image"
+      ng-class="{ 'image-opacity-50': gallery.trash }">
+      <a href="http://localhost:8000/#!/gallery-rating/{{ratingId}}#position-{{$index}}">
+        <img ng-src="{{imagePath}}{{gallery.name}}"/>
+      </a>
+    </div>
+
+    <div class="gallery-overview-picture-rating">
+      <span class="glyphicon glyphicon-trash"
+            ng-class="{'glyphicon-trash-active': gallery.trash}"
+            ng-click="toggleTrash($index); setThumbs($index, false)">
+      </span>
+      <span class="glyphicon"
+            ng-class="gallery.rating >= 1 ? 'glyphicon-star':'glyphicon-star-empty'"
+            ng-click="setRating($index, 1)">
+      </span>
+      <span class="glyphicon"
+            ng-class="gallery.rating >= 2 ? 'glyphicon-star':'glyphicon-star-empty'"
+            ng-click="setRating($index, 2)">
+      </span>
+      <span class="glyphicon"
+            ng-class="gallery.rating >= 3 ? 'glyphicon-star':'glyphicon-star-empty'"
+            ng-click="setRating($index, 3)">
+      </span>
+      <span class="glyphicon glyphicon-thumbs-up"
+            ng-class="{'glyphicon-thumbs-up-active': gallery.thumbs}"
+            ng-click="toggleThumbs($index); setTrash($index, false)">
+      </span>
+
+    </div>
+
+  </div>
+</div>
+
+</div>
+</div>

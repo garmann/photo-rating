@@ -1,0 +1,16 @@
+<navigation></navigation>
+<div class="gallery-listing">
+  <div class="listing">
+    <h2>Overview Version:</h2>
+    <ul ng-repeat="shooting in shootings">
+      <li><a href="#!/gallery-overview-rating/{{shooting.id}}">{{shooting.title}}</a></li>
+    </ul>
+  </div>
+
+  <div class="listing">
+  <h2>Detail Version:</h2>
+    <ul ng-repeat="shooting in shootings">
+      <li><a href="#!/gallery-rating/{{shooting.id}}">{{shooting.title}}</a></li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,89 @@
+<navigation></navigation>
+
+<div class="gallery-rating">
+
+<div class="gallery-header">
+  <h2>{{shootingdetail.title}}</h2>
+  <p>{{shootingdetail.description}}</p>
+</div>
+
+<div class="gallery">
+  <div class="gallery-picture" ng-repeat="gallery in shootingdetail.photos track by $index">
+
+    <div id="#position-{{$index}}"></div>
+
+    <div class="gallery-picture-filename">
+      Filename: {{gallery.name}}
+    </div>
+
+    <div class="gallery-picture-image"
+      ng-class="{ 'image-opacity-50': gallery.trash }"
+    >
+      <img ng-src="{{imagePath}}{{gallery.name}}" ng-elevate-zoom zoom-image="{{imagePath}}{{gallery.name}}">
+
+    </div>
+
+    <div class="gallery-picture-rating">
+      <span class="glyphicon glyphicon glyphicon-trash"
+            ng-class="{'glyphicon-trash-active': gallery.trash}"
+            ng-click="toggleTrash($index); setThumbs($index, false)">
+      </span>
+
+      <span class="glyphicon"
+            ng-class="gallery.rating >= 1 ? 'glyphicon-star':'glyphicon-star-empty'"
+            ng-click="setRating($index, 1)">
+      </span>
+
+      <span class="glyphicon"
+            ng-class="gallery.rating >= 2 ? 'glyphicon-star':'glyphicon-star-empty'"
+            ng-click="setRating($index, 2)">
+      </span>
+
+      <span class="glyphicon"
+            ng-class="gallery.rating >= 3 ? 'glyphicon-star':'glyphicon-star-empty'"
+            ng-click="setRating($index, 3)">
+      </span>
+
+      <span class="glyphicon glyphicon-thumbs-up"
+            ng-class="{'glyphicon-thumbs-up-active': gallery.thumbs}"
+            ng-click="toggleThumbs($index); setTrash($index, false)">
+      </span>
+
+      <a class="link-no-color"
+        ng-href="{{backendApiUrl}}/download-image/{{ratingId}}/{{gallery.name}}"
+        title="download picture {{gallery.name}}">
+        <span class="glyphicon glyphicon-save">
+        </span>
+      </a>
+
+    </div>
+
+
+    <hr>
+
+    <div class="gallery-picture-comments">
+
+      <ul ng-if="gallery.comments" ng-repeat="comment in gallery.comments">
+        <li><span class="comments-author">{{comment.author}}: </span>{{comment.text}}</li>
+      </ul>
+
+      <span class="glyphicon glyphicon-comment"></span>
+
+      <form class="formnewcomment">
+        <label><input placeholder="Type a comment..." type="text" ng-model="newcommenttext" size="40"></label>
+        <button ng-click="addComment($index)">Add</button>
+      </form>
+
+
+    </div>
+
+  </div>
+
+  </div>
+
+</div>
+  <script type="text/javascript">
+    myTest();
+  </script>
+</div>
+

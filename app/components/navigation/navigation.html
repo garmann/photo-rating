@@ -1,0 +1,34 @@
+<div class="navigationbar">
+  <ul>
+    <li>
+      <a href="/#!/gallery-listing">
+        <span class="navigation glyphicon glyphicon-list-alt"></span>
+        gallery-listing
+      </a>
+    </li>
+    <li>
+      <a href="/#!/my-shootings">
+        <span class="navigation glyphicon glyphicon-cog"></span>
+        edit shootings
+      </a>
+    </li>
+    <li ng-show="valuengshow">
+      <a ng-href="{{themeswitchto}}">
+        <span href="" class="navigation glyphicon glyphicon-th" ng-show="valuengshow == 'gallery-rating'">
+        </span>
+        <span href="" class="navigation glyphicon glyphicon-list" ng-show="valuengshow == 'gallery-overview-rating'">
+        </span>
+        switch view
+      </a>
+    </li>
+    <li ng-show="valuengshow">
+      <a class="link-no-color" ng-href="{{backendApiUrl}}/download-listing/{{shootingid}}" title="Download Shooting as zip">
+        <span class="navigation glyphicon glyphicon-save">
+        </span>
+        zip download
+      </a>
+    </li>
+  </ul>
+
+
+</div>
