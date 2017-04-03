@@ -275,3 +275,25 @@ hr {
 .glyphicon-star-active {
   color: orange;
 }
+
+
+@media(max-width: 840px){
+  .navigationbar {
+    height: 125px;
+  }
+
+}
+
+@media(max-width: 480px){
+  .navigationbar {
+    height: 180px;
+  }
+
+}
+
+@media(max-width: 400px){
+  .navigationbar {
+    height: 240px;
+  }
+
+}
